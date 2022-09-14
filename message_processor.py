@@ -55,7 +55,6 @@ class MessageProcessor:
         self.socket.send(message.mount().encode())
 
     def process_publickey(self, message):
-        print("AAAAAAAAAAAAAAAAAAAAAA")
         publickey = Cryptography.deserialize_publickey(message.public)
         ciphertext = Cryptography.encrypt_asymmetric(self.symmetric_key, publickey)
         message = Message(ciphertext.hex(), MessageType.SYMMETRICAL)
