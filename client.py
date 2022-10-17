@@ -35,7 +35,6 @@ class Server(threading.Thread):
                 try:
                     s = item.recv(2048)
                     if s!='':
-                        print(s.decode())
                         message = Message(raw=s.decode())
                         valid = message.unmount()
                         if(valid == True):

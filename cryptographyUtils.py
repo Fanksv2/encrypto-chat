@@ -25,7 +25,6 @@ class Cryptography:
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
         return pem
-        #return "".join(pem.decode().splitlines()).encode()
     
     @staticmethod
     def encrypt_asymmetric(plaintext, publickey):
